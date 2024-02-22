@@ -1,0 +1,102 @@
+// import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
+// import axios from "axios";
+
+export default function Signup() {
+  // const [name, setName] = useState();
+  // const [email, setEmail] = useState();
+  // const [password, setPassword] = useState();
+
+  // const handleSubmit = (e) => {
+  //   e.preventDedault();
+ 
+  //   axios
+  //     .post("http://localhost:3001/register", { name, email, password })
+  //     .then((result) => console.log(result))
+  //     .catch((err) => console.log(err));
+  // };
+
+  return (
+    <div className="d-flex justify-content-center align-items-center bg-secondary vh-100">
+      <button>
+      <Link to="/" className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none" >
+      Back
+      </Link>
+      </button>
+      <div className="bg-white p-2 rounded w-30">
+        <h2> Sign-Up </h2>
+        <form >
+        {/* <form onSubmit={handleSubmit}> */}
+          <div className="mb-3">
+            <label htmlFor="username">
+              <strong>
+              Name
+              </strong>
+            </label>
+            <input
+              type="text"
+              id="username"
+              placeholder="Username"
+              autoComplete="off"
+              className="form-control rounded-0"
+              // onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="email">
+              <strong>
+              Email
+              </strong>
+            </label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Email Address"
+              autoComplete="off"
+              className="form-control rounded-0"
+              // onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div>
+            <label htmlFor="password">
+              <strong>
+              Password
+              </strong>
+            </label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              autoComplete="off"
+              name="password"
+              className="form-control rounded-0"
+              // onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <div>
+            {/* FOR KEY ID */}
+            <input type="checkbox" id="agreement"/>
+            <label htmlFor="agreement"> Consent Agreement</label>
+          </div>
+          <div>
+            {/* FOR KEY ID */}
+            <input type="checkbox" id="agreement"/>
+            <label htmlFor="agreement"> Receive monthly subscription deals and coupons.</label>
+          </div>
+        </form>
+          <button type="submit" className="btn btn-success w-100 rounded-0">
+          <strong>
+            Register{" "}
+              </strong>
+          </button>
+          <p> Already Have an Account? </p>
+        <Link to="/login" className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none" >
+        <strong>
+          Login
+        </strong>
+        </Link>
+      </div>
+    </div>
+  );
+}

@@ -76,13 +76,13 @@ export default function Signup() {
           </div>
           <div>
             {/* FOR KEY ID */}
-            <input type="checkbox" id="agreement"/>
-            <label htmlFor="agreement"> Consent Agreement</label>
+            <input type="checkbox" id="agreementConsent"/>
+            <label htmlFor="agreementConsent"> Consent Agreement</label>
           </div>
           <div>
             {/* FOR KEY ID */}
-            <input type="checkbox" id="agreement"/>
-            <label htmlFor="agreement"> Receive monthly subscription deals and coupons.</label>
+            <input type="checkbox" id="agreementMerch"/>
+            <label htmlFor="agreementMerch"> Receive monthly subscription deals and coupons.</label>
           </div>
         </form>
           <button type="submit" className="btn btn-success w-100 rounded-0">

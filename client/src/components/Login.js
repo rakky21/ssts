@@ -47,7 +47,7 @@ export default function Login() {
           </button>
         </form>
         <Link
-        to='/register'
+        to='/signup'
           className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none"
         >
           Sign-Up

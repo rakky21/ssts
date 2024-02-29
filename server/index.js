@@ -1,19 +1,16 @@
 const express = require("express");
-const mongoose = require("mongoose");
-const UserModel = require("./model/User");
+const UserModel = require("./models/User");
+const db = require("./config/connection");
 
+const PORT = process.env.PORT || 3001;
 const app = express();
-
 app.use(express.json());
 
-mongoose.connect("mongodb://127.0.0.1:27017/user");
+//route
+app.use(require("./routes/api/index.js"));
 
-app.post("/register", (req, res) => {
-  UserModel.create(req.body)
-    .then((users) => res.json(users))
-    .catch((err) => res.json(err));
-});
+app.use(routes);
 
-app.listen(3001, () => {
-  console.log("server is running");
+db.once('open', () => {
+  app.listen(PORT, () => console.log(`🌍 Now listening on localhost:${PORT}`));
 });

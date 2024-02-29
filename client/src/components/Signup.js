@@ -13,7 +13,7 @@ export default function Signup() {
       .then((result) => console.log(result))
       .catch((err) => console.log(err));
   };
-
+// THIS IS WHERE I NEED TO FIX THE PROBLEMMM
   return (
     <div className="d-flex justify-content-center align-items-center bg-secondary vh-100">
       <div className="bg-white p-2 rounded w-30">

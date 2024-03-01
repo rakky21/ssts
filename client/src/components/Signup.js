@@ -1,19 +1,24 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 
 export default function Signup() {
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-  
+  const [data, setData] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("/signup", { name, email, password })
-      .then((result) => console.log(result))
-      .catch((err) => console.log(err));
+    console.log(data);
   };
-// THIS IS WHERE I NEED TO FIX THE PROBLEMMM. It did not update. Test 2
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setData({ ...data, [name]: value });
+  };
+
   return (
     <div className="d-flex justify-content-center align-items-center bg-secondary vh-100">
       <div className="bg-white p-2 rounded w-30">
@@ -21,44 +26,54 @@ export default function Signup() {
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label htmlFor="username">
-              <strong>Name</strong>
+              <strong>Username</strong>
             </label>
             <input
-              type="text"
               id="username"
+              type="text"
+              name="username"
+              autoComplete="on"
+              value={data.username}
               placeholder="Username"
-              autoComplete="off"
               className="form-control rounded-0"
-              onChange={(e) => setName(e.target.value)}
+              onChange={handleChange}
             />
           </div>
+
           <div className="mb-3">
             <label htmlFor="email">
               <strong>Email</strong>
             </label>
             <input
               type="email"
+              name="email"
               id="email"
+              autoComplete="on"
+              value={data.email}
               placeholder="Email Address"
-              autoComplete="off"
               className="form-control rounded-0"
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={handleChange}
+
             />
           </div>
+
           <div>
             <label htmlFor="password">
               <strong>Password</strong>
             </label>
             <input
               type="password"
-              id="password"
-              placeholder="Password"
-              autoComplete="off"
               name="password"
+              id="password"
+              autoComplete="off"
+              value={data.password}
+              placeholder="Password"
               className="form-control rounded-0"
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={handleChange}
+
             />
           </div>
+
           <div>
             <input type="checkbox" id="agreementConsent" />
             <label htmlFor="agreementConsent"> Consent Agreement</label>

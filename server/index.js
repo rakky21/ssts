@@ -1,10 +1,18 @@
 const express = require("express");
-const UserModel = require("./models/User");
-const db = require("./config/connection");
+// const db = require("./config/connection");
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
+
 const app = express();
 app.use(express.json());
+
+
+mongoose.connect("mongodb+srv://fcribas:Magnolia@cluster0.qlr3650.mongodb.net/ssts", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+});
 
 //route
 app.use(require("./routes/api/index.js"));

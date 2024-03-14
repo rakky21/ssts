@@ -1,9 +1,10 @@
-import React from "react";
+
 import { Link } from "react-router-dom";
 
 const Dashboard = () => {
     return ( 
         <header>
+          Home
             <ul>
                 <li>
                 <Link to="/login" className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none" >

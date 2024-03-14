@@ -1,18 +1,3 @@
-// // const db = require("./config/connection");
-
-// //express app
-
-//route THIS IS THE PROBLEM
-// app.use(require("./routes/api/index.js"));
-
-// app.use(routes);
-
-// db.once('open', () => {
-//   app.listen(PORT, () => console.log(`🌍 Now listening on localhost:${PORT}`));
-// });
-
-//2
-
 require("dotenv").config();
 
 const express = require("express");

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-// import axios from "axios";
+import Layout from "../components/Layout";
 
 export default function Signup() {
   const [data, setData] = useState({
@@ -20,11 +20,11 @@ export default function Signup() {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center bg-secondary vh-100">
-      <div className="bg-white p-2 rounded w-30">
+    <Layout>
+      <div className="signupStyle">
         <h2> Sign-Up </h2>
         <form onSubmit={handleSubmit}>
-          <div className="mb-3">
+          <div>
             <label htmlFor="username">
               <strong>Username</strong>
             </label>
@@ -40,7 +40,7 @@ export default function Signup() {
             />
           </div>
 
-          <div className="mb-3">
+          <div>
             <label htmlFor="email">
               <strong>Email</strong>
             </label>
@@ -53,7 +53,6 @@ export default function Signup() {
               placeholder="Email Address"
               className="form-control rounded-0"
               onChange={handleChange}
-
             />
           </div>
 
@@ -70,7 +69,6 @@ export default function Signup() {
               placeholder="Password"
               className="form-control rounded-0"
               onChange={handleChange}
-
             />
           </div>
 
@@ -79,7 +77,6 @@ export default function Signup() {
             <label htmlFor="agreementConsent"> Consent Agreement</label>
           </div>
           <div>
-            {/* FOR KEY ID */}
             <input type="checkbox" id="agreementMerch" />
             <label htmlFor="agreementMerch">
               {" "}
@@ -98,6 +95,12 @@ export default function Signup() {
           <strong>Login</strong>
         </Link>
       </div>
-    </div>
+      <Link
+        to="/"
+        className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none"
+      >
+        Back
+      </Link>
+    </Layout>
   );
 }

@@ -1,109 +1,52 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
 /* === GEN === */
-
 :root {
   --transition: all 1s ease;
   --transition2: all 5s ease;
   --transition3: all 2ms ease;
 
   .rainbow-text {
-    background-image: linear-gradient(
-      to left,
-      violet,
-      indigo,
-      blue,
-      green,
-      yellow,
-      orange,
-      red
-    );
+    background-image: linear-gradient(to left,
+        violet,
+        indigo,
+        blue,
+        green,
+        yellow,
+        orange,
+        red);
   }
 
   .background_main {
-    background-image: linear-gradient(
-      to right,
-      black,
-      indigo,
-      rgb(71, 71, 151),
-      rgb(159, 77, 175),
-      rgb(118, 63, 129),
-      rgb(89, 18, 104)
-    );
+    background-image: linear-gradient(to right,
+        black,
+        indigo,
+        rgb(71, 71, 151),
+        rgb(159, 77, 175),
+        rgb(118, 63, 129),
+        rgb(89, 18, 104));
   }
-  --color-background-main: rgb(56, 35, 95);
-  --color-background-alt: rgb(120, 90, 160);
+
+  --color-background-main: rgb(5, 71, 27);
+  --color-background-alt: rgb(247, 244, 231);
 
   --color-background: rgb(236, 233, 220);
 
-  --color-letter-primary: rgb(238, 234, 234);
+  --color-letter-primary: rgb(206, 206, 206);
   --color-letter-secondary: rgb(170, 170, 170);
+  --color-letter-third: rgb(94, 87, 87);
   --color-letter-alert: rgb(193, 0, 0);
 
   --color-border-primary: rgb(177, 186, 204);
 
-  --color-onHover: rgb(75, 92, 141);
-  --color-letter-onHover: rgb(163, 135, 44);
+  --color-onHover: rgb(83, 128, 98);
+  --color-letter-onHover: rgb(20, 68, 48);
 
   --container-width-lg: 75%;
   --container-wigth-md: 86%;
   --container-wigth-sm: 90%;
 }
-html {
-  box-sizing: border-box;
-}
-h1 {
-  font-weight: 600;
-  margin: 3rem;
-}
 
-
-p {
-  margin: 3rem;
-  font-size: 2rem;
-  color: var(--color-letter-primary);
-}
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-}
-
-.text-light {
-  color: var(--color-letter-alert);
-}
-a {
-  color: var(--color-letter-primary);
-  transition: var(--transition);
-}
-a :hover {
-  transition: var(--transition3);
-}
-.btn {
-  width: max-content;
-  display: inline-block;
-  padding: 0.75rem 3rem;
-  background-color: var(--color-border-main);
-  border-radius: 0.4rem;
-  cursor: pointer;
-  border: 1px solid var(--color-border-cyan);
-  transition: var(--transition);
-}
-
-a {
-  font-size: 3rem;
-}
-span {
-  font-size: 3rem;
-}
-.btn:hover {
-  transition: var(--transition);
-  background-color: var(--color-letter-primary);
-  color: var(--color-primary);
-  box-shadow: none;
-  border: solid 1px var(--color-letter-primary);
-}
 * {
   margin: 0;
   padding: 0;
@@ -113,44 +56,87 @@ span {
   list-style: none;
   text-decoration: none;
 }
+
+h1,
+h2,
+h3,
+h4 {
+  font-size: 3.5rem;
+  color: var(--color-letter-primary)
+}
+
+p,
+a,
+span {
+  margin: 1.5rem;
+  font-size: 2rem;
+  color: var(--color-letter-secondary);
+  transition: var(--transition);
+}
+
+section {
+  max-width: 80%;
+  margin: auto;
+  padding: 3rem;
+}
+
+.little {
+  font-size: smaller;
+  color: var(--color-letter-third);
+}
+
+.alert {
+  color: var(--color-letter-alert);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+a :hover {
+  transition: var(--transition3);
+  color: var(--color-letter-onHover);
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  background-color: var(--color-border-main);
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  transition: var(--transition);
+  background-color: var(--color-letter-primary);
+  color: var(--color-primary);
+  box-shadow: none;
+}
+
 html {
   scroll-behavior: smooth;
 }
+
 ::-webkit-scrollbar {
   display: auto;
 }
-span > .HOME {
+
+span>.HOME {
   display: none;
 }
 
 .layout {
   text-align: center;
 }
-/* === NAV === */
-.nav {
-  display: flex;
-  background-color: var(--color-background-main);
-  cursor: pointer;
-  padding: 3rem 3rem;
-  justify-content: left;
-  gap: 5rem;
-}
-.nav > h3 {
-  transition: var(--transition);
-}
-.nav > h3:hover {
-  color: var(--color-letter-third);
-  transition: var(--transition);
+
+.nombre>a {
+  margin: 0;
+  font-size: 4rem;
 }
 
-.nav_left_display {
-  display: flex;
-}
-.nav_right_display {
-  display: flex;
-  position: absolute;
-  right: 1110px;
-}
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--color-bg3);
@@ -159,87 +145,18 @@ body {
   font-size: 2rem;
   background-color: var(--color-background-alt);
 }
-label {
+
+label,
+input {
   font-size: 2.5rem;
-  left: 0;
-  position: absolute;
+  margin: 1rem auto;
+  max-width: 80%;
 }
 
-/* === ABOUT === */
-.about_section {
-  margin: 1.5rem auto;
-  max-width: 45%;
-  background-color: var(--color-bg);
-  color: var(--color-border-cyan);
-  background: linear-gradient(45deg, var(--color-primary));
-  text-align: center;
-}
-.about_section h1 {
-  color: var(--color-border-cyan);
-  width: fit-content;
-  margin: auto;
-}
-.about_section > div > img {
-  border-radius: 55rem 55rem 20rem 20rem;
-  transition: var(--transition2);
-  margin: auto;
-}
-.about_description {
-  border-radius: 5px;
-  transition: var(--transition);
-}
-.about_description:hover {
-  background-color: var(--color-border-main);
-  transition: var(--transition);
-}
-
-.about_section > div > img:hover {
-  border-radius: 60%;
-  transition: var(--transition2);
-}
-.about_section > div > a {
-  color: var(--color-bg);
-}
-.about_section > div > a:hover {
-  color: var(--color-letter-primary);
-}
-
-.card {
-  border: 1px solid var(--color-border-cyan);
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px rgb(0, 0, 0);
-  padding: 20px;
-  margin: 10px;
-  text-align: center;
-  max-width: 300px;
-  display: inline-block;
-  transition: var(--transition);
-  background-color: var(--color-background-main);
-}
-.card-image {
-  max-width: 60%;
-}
-.card:hover {
-  transition: var(--transition);
-}
-.cardImg {
-  border-radius: 5px;
-  height: 150px;
-  object-fit: cover;
-}
-.card > h3 {
-  margin: 0.55rem;
-}
-.card > small {
-  height: 7rem;
-  transition: var(--transition);
-  opacity: 55%;
-  margin: 0.75rem auto;
-  font-size: 1rem;
-}
-.card > small:hover {
-  opacity: unset;
-  transition: var(--transition);
+.cardTitle {
+  font-family: Arial, sans-serif;
+  margin: 1rem;
+  font-size: 2rem;
 }
 
 .loginStyle {
@@ -254,6 +171,7 @@ label {
   transition: var(--transition);
   background-color: var(--color-background-main);
 }
+
 .signupStyle {
   border: 1px solid var(--color-border-cyan);
   border-radius: 10px;
@@ -265,94 +183,4 @@ label {
   display: inline-block;
   transition: var(--transition);
   background-color: var(--color-background-main);
-}
-/* === FOOTER === */
-footer {
-  background-color: var(--color-background-main);
-  text-align: center;
-  width: 100%;
-  height: 8rem;
-  min-height: 35vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: var(--color-background-main);
-}
-footer > a {
-  color: var(--color-border-cyan);
-}
-footer > a:hover {
-  color: var(--color-letter-primary);
-}
-
-@media screen and (max-width: 1024px) {
-  main {
-    margin: 0;
-    color: var(--color-border-cyan-highlight);
-  }
-  .nav_container {
-    gap: 5rem;
-    margin: auto;
-  }
-  .nav_container > h3 > span {
-    font-size: 3rem;
-  }
-  body {
-    background-position: right;
-    background-size: auto;
-  }
-  .Home_About {
-    display: none;
-    margin: 1.5rem auto;
-    justify-content: center;
-    border-radius: 15px;
-    text-align: center;
-    width: 75%;
-  }
-
-  .about_section {
-    position: center;
-    margin: auto;
-    max-width: fit-content;
-    font-size: medium;
-  }
-  .about_title {
-    font-size: 2rem;
-  }
-  .about_description {
-    width: 65%;
-    margin: auto;
-    text-align: center;
-    border-radius: 5px;
-    transition: var(--transition);
-    background-color: var(--color-letter-primary);
-    /* color: var(--color-border-cyan-highlight); */
-  }
-  .experience {
-    gap: 0.25rem;
-    padding: 0.55rem;
-  }
-  .articulo_name > h5 {
-    font-size: 12px;
-  }
-  .projects_list {
-    font-size: 0.75rem;
-    width: 85%;
-  }
-  .projects_container {
-    max-width: fit-content;
-    /* display: grid; */
-    text-align: center;
-    margin: 0;
-  }
-}
-@media screen and (max-width: 600px) {
-  section {
-    width: var(--container-wigth-sm);
-  }
-  h1,
-  h2,
-  h3 {
-    font-size: small;
-  }
 }

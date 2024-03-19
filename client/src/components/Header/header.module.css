@@ -1,0 +1,30 @@
+/* === NAV === */
+.nav {
+    background-color: var(--color-background-main);
+    cursor: pointer;
+    padding: 3rem 3rem;
+    justify-content: left;
+    gap: 10rem;
+  }
+  .nav>h1 {
+    transition: var(--transition);
+  }
+  .nav>h1:hover {
+    color: var(--color-letter-third);
+    transition: var(--transition);
+  }
+  .nav_left_display {
+    display: flex;
+    position: absolute;
+    left: 200px;
+    padding: 0;
+    margin: 0;
+  }
+  .nav_left_display :hover {
+    color: var(--color-)
+  }
+  .nav_right_display {
+    display: flex;
+    position: absolute;
+    right: 10px;
+  }

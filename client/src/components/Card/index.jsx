@@ -1,14 +1,16 @@
+import styles from "./card.module.css";
+
 function Card() {
   return (
-    <div className="card">
+    <section className={styles.card}>
       <img
-        className="card-image"
+        className={styles.cardphoto}
         src="https://via.placeholder.com/150"
         alt="Image showing something"
       />
-      <h2> Title Name </h2>
+      <h2 className="cardTitle"> Title Name </h2>
       <p> Description of what this is going to be about</p>
-    </div>
+    </section>
   );
 }
 

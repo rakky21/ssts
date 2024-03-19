@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
+import style from "./header.module.css";
 
 function Nav({ children }) {
   return (
-    <header className="nav background_main">
-      Rakcity
-      <ul className="nav_left_display">
+    <header className={style.nav}>
+      <h1 className="nombre">
+        Rak
+        <Link to="/">city</Link>
+      </h1>
+      <ul className={style.nav_left_display}>
         <li href="#">
           <Link
             to="/"
@@ -13,6 +17,7 @@ function Nav({ children }) {
             Home{" "}
           </Link>
         </li>
+
         <li href="#">
           <Link
             to="/about"
@@ -22,7 +27,8 @@ function Nav({ children }) {
           </Link>
         </li>
       </ul>
-      <ul className="nav_right_display">
+
+      <ul className={style.nav_right_display}>
         <li>
           <Link
             to="/login"
@@ -30,6 +36,7 @@ function Nav({ children }) {
           >
             Login
           </Link>
+
           <Link
             to="/signup"
             className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none"

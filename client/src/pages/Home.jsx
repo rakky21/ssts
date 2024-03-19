@@ -1,13 +1,12 @@
-import Card from "../components/Card";
+import Display from "../components/Display";
 import Layout from "../components/Layout";
 import { Outlet } from "react-router-dom";
 
 const Home = () => {
   return (
     <Layout>
-      <div>
-        HELLO WORLD!!! IT'S TIME!
-      </div>
+      <p>HELLO WORLD!!! IT'S TIME!</p>
+      <Display />
       <Outlet />
     </Layout>
   );

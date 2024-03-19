@@ -1,0 +1,19 @@
+.card {
+    border: 1px solid var(--color-border-cyan);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0);
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    max-width: 300px;
+    display: inline-block;
+    transition: var(--transition);
+    background-color: var(--color-background-main);
+}
+
+.cardphoto {
+    border-radius: 5px;
+    height: 150px;
+    object-fit: cover;
+    margin: auto;
+}

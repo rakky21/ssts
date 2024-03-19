@@ -45,12 +45,6 @@ export default function Login() {
           Sign-Up
         </Link>
       </div>
-      <Link
-        to="/"
-        className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none"
-      >
-        Back
-      </Link>
     </Layout>
   );
 }

@@ -25,9 +25,7 @@ export default function Signup() {
         <h2> Sign-Up </h2>
         <form onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="username">
-              <strong>Username</strong>
-            </label>
+            <label htmlFor="username">Username</label>
             <input
               id="username"
               type="text"
@@ -41,9 +39,7 @@ export default function Signup() {
           </div>
 
           <div>
-            <label htmlFor="email">
-              <strong>Email</strong>
-            </label>
+            <label htmlFor="email">Email</label>
             <input
               type="email"
               name="email"
@@ -57,9 +53,7 @@ export default function Signup() {
           </div>
 
           <div>
-            <label htmlFor="password">
-              <strong>Password</strong>
-            </label>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               name="password"
@@ -71,7 +65,7 @@ export default function Signup() {
               onChange={handleChange}
             />
           </div>
-
+          {/* THIS NEEDS TO BE INCORPERATED TO THE DATA BASE IN ORDER FOR THEM TO RECEIVE THE UPDATES. BOOLEAN */}
           <div>
             <input type="checkbox" id="agreementConsent" />
             <label htmlFor="agreementConsent"> Consent Agreement</label>
@@ -83,8 +77,8 @@ export default function Signup() {
               Receive monthly subscription deals and coupons.
             </label>
           </div>
-          <button type="submit" className="btn btn-success w-100 rounded-0">
-            <strong>Register </strong>
+          <button type="submit" className="btn">
+            Register
           </button>
         </form>
         <p> Already Have an Account? </p>
@@ -95,12 +89,6 @@ export default function Signup() {
           <strong>Login</strong>
         </Link>
       </div>
-      <Link
-        to="/"
-        className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none"
-      >
-        Back
-      </Link>
     </Layout>
   );
 }

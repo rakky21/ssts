@@ -6,8 +6,7 @@ import Card from "../components/Card";
 const About = () => {
   return (
     <Layout>
-      <div> This is all about us that you need to know</div>
-
+      <p> This is all about us that you need to know</p>
       <Card />
       <Outlet />
     </Layout>

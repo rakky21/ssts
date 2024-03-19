@@ -1,0 +1,21 @@
+.display>h2 {
+    margin: auto;
+}
+
+.content {
+    display: flex;
+}
+
+.read_more_left {
+    position: absolute;
+    left: 500px;
+    padding: 0;
+    margin: 0;
+}
+
+.read_more_right {
+    position: absolute;
+    right: 500px;
+    padding: 0;
+    margin: 0;
+}

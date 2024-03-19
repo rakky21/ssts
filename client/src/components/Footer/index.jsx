@@ -1,7 +1,9 @@
+import style from "./footer.module.css";
+
 function Footer() {
   return (
-    <footer className="footer  background_main">
-      <a className=" " href="/">
+    <footer className={style.footer}>
+      <a href="/">
         &copy; 2024 - {new Date().getFullYear()} Cribas Development
       </a>
       <br />

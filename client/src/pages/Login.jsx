@@ -1,24 +1,30 @@
 import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
+import photographia from "../assets/handshake.jpg";
 
-export default function Login() {
+const Login = () => {
   // const [email , setEmail] = useState()
 
   return (
     <>
       <Layout>
         <section className="loginSection">
-          <div className="loginSignup row">
-            <p> Don't have an account? Sign up today to view more </p>
+          <div className="loginSignup ">
+            <p>
+              {" "}
+              Don't have an account? Sign up today to view more items and find
+              out more about our community!
+            </p>
             <Link
               to="/signup"
               className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none"
             >
-              Sign-Up
+              Register
             </Link>
+            <img src={photographia} />
           </div>
 
-          <div className="loginStyle row">
+          <div className="loginStyle">
             <h2> Login </h2>
             <form>
               <label htmlFor="username" className="mb-3">
@@ -45,7 +51,15 @@ export default function Login() {
                   // onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
-              <button type="submit" className="btn btn-success w-100 rounded-0">
+              <div>
+                <input type="checkbox" id="rememberMe" />
+                <label htmlFor="rememberMe"> Remember me</label>
+              </div>
+              <div>
+                <input type="checkbox" id="agreementMerch" />
+                <label htmlFor="agreementMerch">Forgot password?</label>
+              </div>
+              <button type="submit" className="btn">
                 {" "}
                 Login{" "}
               </button>
@@ -55,4 +69,6 @@ export default function Login() {
       </Layout>
     </>
   );
-}
+};
+
+export default Login;

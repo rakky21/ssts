@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import style from "./header.module.css";
 
-function Nav({ children }) {
+export default function Nav({ children }) {
   return (
     <header className={style.nav}>
       <h1 className="nombre">
@@ -16,6 +16,9 @@ function Nav({ children }) {
         <li href="#">
           <Link to="/about">About </Link>
         </li>
+        <li href="#">
+          <Link to="/dashboard">Dashboard </Link>
+        </li>
       </ul>
 
       <ul className={style.nav_right_display}>
@@ -28,5 +31,3 @@ function Nav({ children }) {
     </header>
   );
 }
-
-export default Nav;

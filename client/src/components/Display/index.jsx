@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./display.module.css";
 
-function Display() {
+export default function Display() {
   return (
     <>
       <section className={styles.display}>
@@ -25,7 +25,7 @@ function Display() {
       <section className={styles.display}>
         <h2 className={styles.titulo}> This is the title</h2>
         <div className={styles.content}>
-          <p>
+          <p className={styles.parro}>
             This will be a "card" of how the layout of the page will look like
             This will be a "card" of how the layout of the page will look like
             This will be a "card" of how the layout of the page will look like
@@ -40,5 +40,3 @@ function Display() {
     </>
   );
 }
-
-export default Display;

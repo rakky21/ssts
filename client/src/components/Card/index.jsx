@@ -1,6 +1,6 @@
 import styles from "./card.module.css";
 
-function Card() {
+export default function Card() {
   return (
     <section className={styles.card}>
       <img
@@ -13,5 +13,3 @@ function Card() {
     </section>
   );
 }
-
-export default Card;

@@ -1,6 +1,6 @@
 import Layout from "../Layout";
 
-const DisplayedItem = () => {
+export default function DisplayedItem() {
   return (
     <Layout>
       <Link
@@ -14,6 +14,4 @@ const DisplayedItem = () => {
       <Outlet />
     </Layout>
   );
-};
-
-export default DisplayedItem;
+}

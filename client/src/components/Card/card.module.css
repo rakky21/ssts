@@ -12,7 +12,6 @@
 }
 
 .cardphoto {
-  border-radius: 5px;
   height: 150px;
   object-fit: cover;
   margin: auto;

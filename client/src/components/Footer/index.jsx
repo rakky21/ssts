@@ -1,6 +1,6 @@
 import style from "./footer.module.css";
 
-function Footer() {
+export default function Footer() {
   return (
     <footer className={style.footer}>
       <a href="/">
@@ -11,5 +11,3 @@ function Footer() {
     </footer>
   );
 }
-
-export default Footer;

@@ -1,14 +1,17 @@
 import React from "react";
-import Layout from "../components/Layout";
 import { Outlet } from "react-router-dom";
-//IF LOGGED IN
+import Layout from "../components/Layout";
+import LoggedIn from "../components/LoggedIn";
 
-const Dashboard = () => {
-  return;
-  <Layout>
-    <section>This is the dashboard once logged in.</section>;
-    <OUtlet />
-  </Layout>;
-};
+function Dashboard() {
+  return (
+    <>
+      <Layout>
+        <LoggedIn isLoggedIn={true} username="YATOO" />
+        <Outlet />
+      </Layout>
+    </>
+  );
+}
 
 export default Dashboard;

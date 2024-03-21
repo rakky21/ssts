@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 
-export default function Signup() {
+const SignUp = () => {
   const [data, setData] = useState({
     username: "",
     email: "",
@@ -88,4 +88,6 @@ export default function Signup() {
       </div>
     </Layout>
   );
-}
+};
+
+export default SignUp;

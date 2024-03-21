@@ -1,37 +1,39 @@
 import { Link } from "react-router-dom";
-import style from "./display.module.css";
+import styles from "./display.module.css";
 
 function Display() {
   return (
     <>
-      <section className={style.display}>
-        <h2> This is the title</h2>
-        <div className={style.content}>
+      <section className={styles.display}>
+        <h2 className={styles.titulo}> This is the title</h2>
+
+        {/* alternate sides when displayed */}
+        <div className={styles.content}>
           <img src="https://via.placeholder.com/150" />
-          <p>
+          <p className={styles.parro}>
             This will be a "card" of how the layout of the page will look like
             This will be a "card" of how the layout of the page will look like
             This will be a "card" of how the layout of the page will look like
             This will be a "card" of how the layout of the page will look like
           </p>
         </div>
-        <Link to="/" className={style.read_more_left}>
+        <Link to="/" className={styles.read_more_left}>
           Read more...
         </Link>
       </section>
 
-      <section className={style.display}>
-        <h2> This is the title</h2>
-        <div className={style.content}>
-          <img src="https://via.placeholder.com/150" />
+      <section className={styles.display}>
+        <h2 className={styles.titulo}> This is the title</h2>
+        <div className={styles.content}>
           <p>
             This will be a "card" of how the layout of the page will look like
             This will be a "card" of how the layout of the page will look like
             This will be a "card" of how the layout of the page will look like
             This will be a "card" of how the layout of the page will look like
           </p>
+          <img src="https://via.placeholder.com/150" />
         </div>
-        <Link to="/" className={style.read_more_right}>
+        <Link to="/" className={styles.read_more_right}>
           Read more...
         </Link>
       </section>

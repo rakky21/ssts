@@ -7,27 +7,32 @@
   --transition3: all 2ms ease;
 
   .rainbow-text {
-    background-image: linear-gradient(to left,
-        violet,
-        indigo,
-        blue,
-        green,
-        yellow,
-        orange,
-        red);
+    background-image: linear-gradient(
+      to left,
+      violet,
+      indigo,
+      blue,
+      green,
+      yellow,
+      orange,
+      red
+    );
   }
 
   .background_main {
-    background-image: linear-gradient(to right,
-        black,
-        indigo,
-        rgb(71, 71, 151),
-        rgb(159, 77, 175),
-        rgb(118, 63, 129),
-        rgb(89, 18, 104));
+    background-image: linear-gradient(
+      to right,
+      black,
+      indigo,
+      rgb(71, 71, 151),
+      rgb(159, 77, 175),
+      rgb(118, 63, 129),
+      rgb(89, 18, 104)
+    );
   }
 
   --color-background-main: rgb(5, 71, 27);
+  --color-background-second: rgb(15, 104, 44);
   --color-background-alt: rgb(247, 244, 231);
 
   --color-background: rgb(236, 233, 220);
@@ -41,6 +46,8 @@
 
   --color-onHover: rgb(83, 128, 98);
   --color-letter-onHover: rgb(20, 68, 48);
+
+  --color-button-bg: rgb(0, 0, 0);
 
   --container-width-lg: 75%;
   --container-wigth-md: 86%;
@@ -62,7 +69,7 @@ h2,
 h3,
 h4 {
   font-size: 3.5rem;
-  color: var(--color-letter-primary)
+  color: var(--color-letter-primary);
 }
 
 p,
@@ -102,11 +109,13 @@ a :hover {
 }
 
 .btn {
+  font-size: 2rem;
   padding: 0.5rem 1rem;
-  background-color: var(--color-border-main);
+  background-color: var(--color-background-second);
   border-radius: 0.4rem;
   cursor: pointer;
   transition: var(--transition);
+  margin: 1rem auto;
 }
 
 .btn:hover {
@@ -124,7 +133,7 @@ html {
   display: auto;
 }
 
-span>.HOME {
+span > .HOME {
   display: none;
 }
 
@@ -132,7 +141,7 @@ span>.HOME {
   text-align: center;
 }
 
-.nombre>a {
+.nombre > a {
   margin: 0;
   font-size: 4rem;
 }
@@ -151,12 +160,16 @@ input {
   font-size: 2.5rem;
   margin: 1rem auto;
   max-width: 80%;
+  text-align: left;
 }
 
-.cardTitle {
-  font-family: Arial, sans-serif;
-  margin: 1rem;
-  font-size: 2rem;
+.loginSection {
+  display: flex;
+  border: 1px solid var(--color-border-cyan);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgb(0, 0, 0);
+  padding: 20px;
+  margin: 10px;
 }
 
 .loginStyle {
@@ -173,7 +186,6 @@ input {
 }
 
 .signupStyle {
-  border: 1px solid var(--color-border-cyan);
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgb(0, 0, 0);
   padding: 20px;
@@ -183,4 +195,5 @@ input {
   display: inline-block;
   transition: var(--transition);
   background-color: var(--color-background-main);
+  color: var(--color-letter-secondary);
 }

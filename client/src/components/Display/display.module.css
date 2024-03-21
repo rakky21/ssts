@@ -1,21 +1,30 @@
-.display>h2 {
-    margin: auto;
+.display > h2 {
+  margin: auto;
 }
 
 .content {
-    display: flex;
+  display: flex;
 }
 
+.titulo {
+  font-size: 3rem;
+  /* color: var(--color-letter-primary); */
+  color: var(--color-letter-secondary);
+}
 .read_more_left {
-    position: absolute;
-    left: 500px;
-    padding: 0;
-    margin: 0;
+  position: absolute;
+  left: 700px;
+  padding: 0;
+  margin: 0;
 }
 
 .read_more_right {
-    position: absolute;
-    right: 500px;
-    padding: 0;
-    margin: 0;
+  position: absolute;
+  right: 700px;
+  padding: 0;
+  margin: 0;
+}
+
+.parro {
+  font-size: 1.5rem;
 }

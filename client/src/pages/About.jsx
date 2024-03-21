@@ -8,6 +8,9 @@ const About = () => {
     <Layout>
       <p> This is all about us that you need to know</p>
       <Card />
+      <Card />
+      <Card />
+      <Card />
       <Outlet />
     </Layout>
   );

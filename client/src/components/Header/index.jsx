@@ -10,39 +10,19 @@ function Nav({ children }) {
       </h1>
       <ul className={style.nav_left_display}>
         <li href="#">
-          <Link
-            to="/"
-            className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none"
-          >
-            Home{" "}
-          </Link>
+          <Link to="/">Home </Link>
         </li>
 
         <li href="#">
-          <Link
-            to="/about"
-            className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none"
-          >
-            About{" "}
-          </Link>
+          <Link to="/about">About </Link>
         </li>
       </ul>
 
       <ul className={style.nav_right_display}>
         <li>
-          <Link
-            to="/login"
-            className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none"
-          >
-            Login
-          </Link>
+          <Link to="/login">Login</Link>
 
-          <Link
-            to="/signup"
-            className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none"
-          >
-            Signup
-          </Link>
+          <Link to="/signup">Signup</Link>
         </li>
       </ul>
     </header>

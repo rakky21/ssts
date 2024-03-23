@@ -21,14 +21,14 @@ const Login = () => {
             >
               Register
             </Link>
-            <img src={photographia} />
+            <img src={photographia} className="handshake"/>
           </div>
 
           <div className="loginStyle">
             <h2> Login </h2>
             <form>
               <label htmlFor="username" className="mb-3">
-                Login ID
+                Username
               </label>
               <input
                 type="text"
@@ -44,7 +44,7 @@ const Login = () => {
                 <input
                   type="password"
                   id="password"
-                  placeholder="Email Address"
+                  placeholder="Password"
                   autoComplete="off"
                   name="password"
                   className="form-control rounded-0"

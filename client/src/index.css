@@ -7,24 +7,28 @@
   --transition3: all 2ms ease;
 
   .rainbow-text {
-    background-image: linear-gradient(to left,
-        violet,
-        indigo,
-        blue,
-        green,
-        yellow,
-        orange,
-        red);
+    background-image: linear-gradient(
+      to left,
+      violet,
+      indigo,
+      blue,
+      green,
+      yellow,
+      orange,
+      red
+    );
   }
 
   .background_main {
-    background-image: linear-gradient(to right,
-        black,
-        indigo,
-        rgb(71, 71, 151),
-        rgb(159, 77, 175),
-        rgb(118, 63, 129),
-        rgb(89, 18, 104));
+    background-image: linear-gradient(
+      to right,
+      black,
+      indigo,
+      rgb(71, 71, 151),
+      rgb(159, 77, 175),
+      rgb(118, 63, 129),
+      rgb(89, 18, 104)
+    );
   }
 
   --color-background-main: rgb(5, 71, 27);
@@ -58,14 +62,19 @@
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
+  font-weight: 300;
+  text-align: center;
 }
 
+/* FIX THE FONT SO IT'S ALL THE SAME WITHOUT MESSING WITH THE LAYOUT OF THE SIGNUP FORM */
 h1,
 h2,
 h3,
 h4 {
   font-size: 3.5rem;
   color: var(--color-letter-primary);
+  margin: auto;
+  padding: 2rem;
 }
 
 p,
@@ -78,7 +87,7 @@ span {
 }
 
 section {
-  max-width: 90%;
+  max-width: 95%;
   margin: auto;
   padding: 3rem;
 }
@@ -115,6 +124,7 @@ a :hover {
   cursor: pointer;
   transition: var(--transition);
   margin: 1rem auto;
+  color: var(--color-letter-secondary);
 }
 
 .btn:hover {
@@ -132,7 +142,7 @@ html {
   display: auto;
 }
 
-span>.HOME {
+span > .HOME {
   display: none;
 }
 
@@ -140,7 +150,7 @@ span>.HOME {
   text-align: center;
 }
 
-.nombre>a {
+.nombre > a {
   margin: 0;
   font-size: 4rem;
 }
@@ -170,9 +180,12 @@ input {
   padding: 5rem;
   margin: 10px;
 }
+.handshake {
+  max-width: 45%;
+}
 
 .loginStyle {
-  border: 1px solid var(--color-border-cyan);
+  border: 1px solid var(--color-border-primary);
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgb(0, 0, 0);
   padding: 20px;
@@ -185,6 +198,7 @@ input {
 }
 
 .signupStyle {
+  border: 1px solid var(--color-border-primary);
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgb(0, 0, 0);
   padding: 20px;

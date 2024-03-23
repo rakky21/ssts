@@ -24,6 +24,7 @@ const SignUp = () => {
       <div className="signupStyle">
         <h2> Sign-Up </h2>
         <form onSubmit={handleSubmit}>
+          
           <div>
             <label htmlFor="username">Username</label>
             <input
@@ -83,7 +84,7 @@ const SignUp = () => {
         </form>
         <p> Already Have an Account? </p>
         <Link to="/login" className="btn">
-          <strong>Login</strong>
+          Login
         </Link>
       </div>
     </Layout>

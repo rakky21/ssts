@@ -7,7 +7,7 @@ function Dashboard() {
   return (
     <>
       <Layout>
-        <LoggedIn isLoggedIn={true} username="YATOO" />
+        <LoggedIn isLoggedIn={true} />
         <Outlet />
       </Layout>
     </>

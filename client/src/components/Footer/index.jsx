@@ -13,7 +13,7 @@ export default function Footer() {
           rel="noreferrer"
           className="mb-3 me-2 emoticons"
         >
-          <FaLinkedincd size="2em" title="LinkedIn" />
+          <FaLinkedin size="2em" title="LinkedIn" />
           <br />
         </a>
         <a

@@ -1,15 +1,15 @@
 .loggedstyle {
-    font-size: 2.5em;
-    background-color: var(--color-background-second);
-    padding: 10px;
-    border-radius: 10px;
-    margin: 0;
+  font-size: 2.5em;
+  background-color: var(--color-background-second);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0;
 }
 
 .logPrompt {
-    font-size: 2.5em;
-    background-color: var(--color-background-second);
-    padding: 10px;
-    border-radius: 10px;
-    margin: 0;
+  font-size: 2.5em;
+  background-color: red;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0;
 }

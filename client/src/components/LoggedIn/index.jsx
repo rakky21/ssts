@@ -5,9 +5,9 @@ export default function LoggedIn(props) {
   const loggedIn = (
     <h2 className={styles.loggedstyle}> Welcome {props.username} </h2>
   );
-
-  const logPrompt = <h2> Please log in to continue</h2>;
-
+  const logPrompt = (
+    <h2 className={styles.logPrompt}> Please log in to continue</h2>
+  );
   return props.isLoggedIn ? loggedIn : logPrompt;
 }
 

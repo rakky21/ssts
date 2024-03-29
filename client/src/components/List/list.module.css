@@ -1,4 +1,10 @@
-.display>h2 {
+.display {
+  margin-bottom: 10px;
+  border: .1rem solid;
+  background-color: var(--color-background-primary);
+}
+
+.display > h2 {
   margin: auto;
 }
 

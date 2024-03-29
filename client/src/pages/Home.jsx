@@ -1,11 +1,11 @@
-import Display from "../components/Display";
+import Merchandise from "../components/Merchandise";
 import Layout from "../components/Layout";
 import { Outlet } from "react-router-dom";
 
 export const Home = () => {
   return (
     <Layout>
-      <Display />
+      <Merchandise />
       <Outlet />
     </Layout>
   );

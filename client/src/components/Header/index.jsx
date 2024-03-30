@@ -16,8 +16,13 @@ export default function Nav({ children }) {
         <li href="#">
           <Link to="/about">About </Link>
         </li>
+
+        {/* IF LOGGED IN */}
         <li href="#">
           <Link to="/dashboard">Dashboard </Link>
+        </li>
+        <li href="#">
+          <Link to="/additem">Add an Item </Link>
         </li>
       </ul>
 

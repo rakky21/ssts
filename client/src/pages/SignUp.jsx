@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 
 const SignUp = () => {
-  const [data, setData] = useState({
+  let [data, setData] = useState({
     username: "",
     email: "",
     password: "",
+    agreement: "",
+    subscription: "",
   });
 
   const handleSubmit = (e) => {
@@ -24,9 +26,8 @@ const SignUp = () => {
       <div className="signupStyle">
         <h2> Sign-Up </h2>
         <form onSubmit={handleSubmit}>
-          
-          <div>
-            <label htmlFor="username">Username</label>
+          <label htmlFor="username">
+            Username
             <input
               id="username"
               type="text"
@@ -37,10 +38,10 @@ const SignUp = () => {
               className="form-control rounded-0"
               onChange={handleChange}
             />
-          </div>
-
-          <div>
-            <label htmlFor="email">Email</label>
+          </label>
+          <br />
+          <label htmlFor="email">
+            Email
             <input
               type="email"
               name="email"
@@ -51,10 +52,9 @@ const SignUp = () => {
               className="form-control rounded-0"
               onChange={handleChange}
             />
-          </div>
-
-          <div>
-            <label htmlFor="password">Password</label>
+          </label>
+          <label htmlFor="password">
+            Password
             <input
               type="password"
               name="password"
@@ -65,19 +65,32 @@ const SignUp = () => {
               className="form-control rounded-0"
               onChange={handleChange}
             />
-          </div>
-          {/* THIS NEEDS TO BE INCORPERATED TO THE DATA BASE IN ORDER FOR THEM TO RECEIVE THE UPDATES. BOOLEAN */}
-          <div>
-            <input type="checkbox" id="agreementConsent" />
-            <label htmlFor="agreementConsent"> Consent Agreement</label>
-          </div>
-          <div>
-            <input type="checkbox" id="agreementMerch" />
-            <label htmlFor="agreementMerch">
-              {" "}
-              Receive monthly subscription deals and coupons.
-            </label>
-          </div>
+          </label>
+          <br />
+          {/* TOGGLED TO RECEIVE NEWS OR NOT */}
+
+          <label htmlFor="agreementConsent">
+            <input
+              type="checkbox"
+              id="agreementConsent"
+              value={data.agreement}
+              onChange={handleChange}
+            />
+            Consent Agreement
+          </label>
+          <br />
+
+          <label htmlFor="agreementMerch">
+            <input
+              type="checkbox"
+              id="agreementMerch"
+              value={data.subscription}
+              onChange={handleChange}
+            />{" "}
+            Receive monthly subscription deals and coupons.
+          </label>
+          <br />
+
           <button type="submit" className="btn">
             Register
           </button>

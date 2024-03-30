@@ -27,6 +27,7 @@ List.propTypes = {
     PropTypes.shape({
       id: PropTypes.number,
       title: PropTypes.string,
+      // src: PropTypes.src, NEED TO FIND THE PROPS FOR SRC DATA
       textBox: PropTypes.string,
       stars: PropTypes.number,
     })

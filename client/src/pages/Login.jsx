@@ -21,7 +21,7 @@ const Login = () => {
             >
               Register
             </Link>
-            <img src={photographia} className="handshake"/>
+            <img src={photographia} className="handshake" />
           </div>
 
           <div className="loginStyle">
@@ -29,39 +29,41 @@ const Login = () => {
             <form>
               <label htmlFor="username" className="mb-3">
                 Username
+                <input
+                  type="text"
+                  id="username"
+                  placeholder="Username"
+                  autoComplete="on"
+                  name="username"
+                  className=""
+                  // onChange={(e) => setName(e.target.value)}
+                />
               </label>
-              <input
-                type="text"
-                id="username"
-                placeholder="Username"
-                autoComplete="on"
-                name="username"
-                className="form-control rounded-0"
-                // onChange={(e) => setName(e.target.value)}
-              />
-              <div>
-                <label htmlFor="password">Password</label>
+              <label htmlFor="password">
+                Password
                 <input
                   type="password"
                   id="password"
                   placeholder="Password"
                   autoComplete="off"
                   name="password"
-                  className="form-control rounded-0"
+                  className=""
                   // onChange={(e) => setPassword(e.target.value)}
                 />
-              </div>
-              <div>
+              </label>{" "}
+              <br />
+              <label htmlFor="rememberMe">
                 <input type="checkbox" id="rememberMe" />
-                <label htmlFor="rememberMe"> Remember me</label>
-              </div>
-              <div>
+                Remember me
+              </label>
+              <br />
+              <label htmlFor="agreementMerch">
                 <input type="checkbox" id="agreementMerch" />
-                <label htmlFor="agreementMerch">Forgot password?</label>
-              </div>
+                Forgot password?
+              </label>
+              <br />
               <button type="submit" className="btn">
-                {" "}
-                Login{" "}
+                Login
               </button>
             </form>
           </div>

@@ -8,7 +8,7 @@ export default function List(props) {
   const listItems = itemList.map((item) => (
     <li key={item.id} className={styles.display}>
       <h2 className={styles.titulo}>{item.title}: &nbsp;</h2>
-      <img src={item.displayedPicture} />
+      <img src={item.src} />
       <p className={styles.parro}> {item.textBox}</p>
       <a>{item.stars}</a>
     </li>

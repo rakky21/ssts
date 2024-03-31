@@ -18,7 +18,6 @@ const AddItem = () => {
     const { name, value } = event.target;
     setData({ ...data, [name]: value });
   };
-
   return (
     <Layout>
       <div className="signupStyle">
@@ -68,7 +67,6 @@ const AddItem = () => {
             />
           </label>
           <br />
-
           <label htmlFor="imageUpload">
             Image Upload
             <input

@@ -10,7 +10,7 @@ function Dashboard() {
   const [users, setUsers] = useState();
 
   // The second argument, the empty array makes it so that it only fires when it first renders
-  
+
   useEffect(() => {
     const fetchUsers = async () => {
       const response = await fetch("/api/users");
@@ -20,7 +20,7 @@ function Dashboard() {
         setUsers(json);
       }
     };
-    fetchUsers();
+    fetchUsers().catch((error) => alert(error.message));
   }, []);
 
   return (

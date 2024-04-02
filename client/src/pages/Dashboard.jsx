@@ -7,29 +7,20 @@ import LoggedIn from "../components/LoggedIn";
 import UserDetails from "../components/UserDetails";
 
 function Dashboard() {
-  const [users, setUsers] = useState(null);
+  const [users, setUsers] = useState();
 
   // The second argument, the empty array makes it so that it only fires when it first renders
-  // useEffect(() => {
-  //   const fetchUsers = async () => {
-  //     const response = await fetch("/api/users");
-  //     const json = await response.json();
-
-  //     if (response.ok) {
-  //       setUsers(json);
-  //     }
-  //   };
-  //   fetchUsers();
-  // }, []);
+  
   useEffect(() => {
-    fetch("/api/users")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        console.log(data);
-        setUsers(data);
-      });
+    const fetchUsers = async () => {
+      const response = await fetch("/api/users");
+      const json = await response.json();
+
+      if (response.ok) {
+        setUsers(json);
+      }
+    };
+    fetchUsers();
   }, []);
 
   return (

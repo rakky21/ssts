@@ -21,7 +21,7 @@ app.use((req, res, next) => {
 });
 
 //routes
-app.use("/api/buds/", USER_API);
+app.use("/api/users/", USER_API);
 
 //connect to DB
 mongoose

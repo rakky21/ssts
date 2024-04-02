@@ -2,7 +2,7 @@ import Merchandise from "../components/Merchandise";
 import Layout from "../components/Layout";
 import { Outlet } from "react-router-dom";
 
-export const Home = () => {
+const Home = () => {
   return (
     <Layout>
       <Merchandise />

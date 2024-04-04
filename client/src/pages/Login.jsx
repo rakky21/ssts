@@ -5,20 +5,16 @@ import React, { useState } from "react";
 
 const Login = () => {
   const [formState, setFormState] = useState({ username: "", password: "" });
-
   const handleChange = (event) => {
     const { name, value } = event.target;
-
     setFormState({
       ...formState,
       [name]: value,
     });
   };
-
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
     try {
       const { data } = await login({
         variables: { ...formState },
@@ -29,7 +25,6 @@ const Login = () => {
       console.error(e);
     }
   };
-
   return (
     <Layout>
       <section className="loginSection">
@@ -47,6 +42,7 @@ const Login = () => {
           </Link>
           <img src={photographia} className="handshake" />
         </div>
+
         <div className="loginStyle">
           <h2> Login </h2>
           <form onSubmit={handleFormSubmit}>

@@ -8,32 +8,28 @@ import UserDetails from "../components/UserDetails";
 
 // HOME
 
-function Dashboard() {
-  const [users, setUsers] = useState(null);
-  // FIX THIS
-  useEffect(() => {
-    const fetchUsers = async () => {
-      const response = await fetch("/api/users");
-      const json = await response.json();
+// The second argument, the empty array makes it so that it only fires when it first renders
 
-      if (response.ok) {
-        setUsers(json);
-        p;
-      }
-    };
+useEffect(() => {
+  const fetchUsers = async () => {
+    const response = await fetch("/api/users");
+    const json = await response.json();
 
-    fetchUsers();
-  }, []);
-  return (
-    <Layout>
-      <LoggedIn isLoggedIn={true} />
-      <div className="userDashboard">
-        {users &&
-          users.map((user) => <UserDetails key={user._id} user={user} />)}
-      </div>
-      <Outlet />
-    </Layout>
-  );
-}
+    if (response.ok) {
+      setUsers(json);
+      p;
+    }
+  };
+  fetchUsers().catch((error) => alert(error.message));
+}, []);
+return (
+  <Layout>
+    <LoggedIn isLoggedIn={true} />
+    <div className="userDashboard">
+      {users && users.map((user) => <UserDetails key={user._id} user={user} />)}
+    </div>
+    <Outlet />
+  </Layout>
+);
 
 export default Dashboard;

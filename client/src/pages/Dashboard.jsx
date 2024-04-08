@@ -13,7 +13,7 @@ function Dashboard() {
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const response = await fetch("/api/users" + id);
+      const response = await fetch("/api/users", );
       const json = await response.json();
 
       if (response.ok) {

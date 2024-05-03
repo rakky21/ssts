@@ -12,10 +12,12 @@ import UserDetails from "../components/UserDetails";
 const Dashboard = () => {
   const [users, setUsers] = useState(null);
 
-  useEffect(() => {
-    const fetchUsers = async () => {
-      const response = await fetch("/api/users",);
-      const json = await response.json();
+
+//FIX
+useEffect(() => {
+  const fetchUsers = async () => {
+    const response = await fetch("/api/users");
+    const json = await response.json();
 
       if (response.ok) {
         setUsers(json);
@@ -28,11 +30,11 @@ const Dashboard = () => {
     <Layout>
       <LoggedIn isLoggedIn={true} />
       <div className="userDashboard">
-      {users && users.map((user) => <UserDetails key={user._id} />)}
+        {users && users.map((user) => <UserDetails key={user._id} />)}
       </div>
       <Outlet />
     </Layout>
   );
-};
+}
 
 export default Dashboard;

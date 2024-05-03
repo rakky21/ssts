@@ -21,9 +21,6 @@ export default function Nav({ children }) {
         <li href="#">
           <Link to="/dashboard">Dashboard </Link>
         </li>
-        <li href="#">
-          <Link to="/additem">Add an Item </Link>
-        </li>
       </ul>
 
       <ul className={style.nav_right_display}>

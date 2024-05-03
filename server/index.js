@@ -4,7 +4,6 @@ var cors = require("cors");
 const express = require("express");
 const mongoose = require("mongoose");
 
-const API_ROUTE = require("./routes/transactions");
 const USER_API = require("./routes/users");
 
 const PORT = process.env.PORT;

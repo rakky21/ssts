@@ -3,21 +3,43 @@ import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 
 const SignUp = () => {
-  let [data, setData] = useState({
+  const [data, setData] = useState({
     username: "",
     email: "",
     password: "",
     agreement: "",
     subscription: "",
   });
+  const [error, setError] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(data);
+
+    const user = { data };
+
+    const response = await fetch("./api/users", {
+      method: "POST",
+      body: JSON.stringify(user),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const json = await response.json();
+
+    if (!response.ok) {
+      setError(json.error);
+    }
+
+    if (response.ok) {
+      setData("");
+      setError(null);
+      console.log("New user added");
+    }
   };
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
+  const handleChange = (e) => {
+    const { name, value } = e.target;
     setData({ ...data, [name]: value });
   };
 
@@ -26,70 +48,38 @@ const SignUp = () => {
       <div className="signupStyle">
         <h2> Sign-Up </h2>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="username">
-            Username
-            <input
-              id="username"
-              type="text"
-              name="username"
-              autoComplete="on"
-              value={data.username}
-              placeholder="Username"
-              className="form-control rounded-0"
-              onChange={handleChange}
-            />
-          </label>
+          <input
+            id="username"
+            type="text"
+            name="username"
+            autoComplete="on"
+            value={data.username}
+            placeholder="Username"
+            className="form-control rounded-0"
+            onChange={handleChange}
+          />
           <br />
-          <label htmlFor="email">
-            Email
-            <input
-              type="email"
-              name="email"
-              id="email"
-              autoComplete="on"
-              value={data.email}
-              placeholder="Email Address"
-              className="form-control rounded-0"
-              onChange={handleChange}
-            />
-          </label>
-          <label htmlFor="password">
-            Password
-            <input
-              type="password"
-              name="password"
-              id="password"
-              autoComplete="off"
-              value={data.password}
-              placeholder="Password"
-              className="form-control rounded-0"
-              onChange={handleChange}
-            />
-          </label>
-          <br />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            autoComplete="on"
+            value={data.email}
+            placeholder="Email Address"
+            className="form-control rounded-0"
+            onChange={handleChange}
+          />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            autoComplete="off"
+            value={data.password}
+            placeholder="Password"
+            className="form-control rounded-0"
+            onChange={handleChange}
+          />
           {/* TOGGLED TO RECEIVE NEWS OR NOT */}
-
-          <label htmlFor="agreementConsent">
-            <input
-              type="checkbox"
-              id="agreementConsent"
-              value={data.agreement}
-              onChange={handleChange}
-            />
-            Consent Agreement
-          </label>
-          <br />
-
-          <label htmlFor="agreementMerch">
-            <input
-              type="checkbox"
-              id="agreementMerch"
-              value={data.subscription}
-              onChange={handleChange}
-            />{" "}
-            Receive monthly subscription deals and coupons.
-          </label>
-          <br />
 
           <button type="submit" className="btn">
             Register

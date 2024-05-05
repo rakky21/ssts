@@ -89,6 +89,10 @@ const SignUp = () => {
         <Link to="/login" className="btn">
           Login
         </Link>
+
+        {/* <I read the NAME Terms of Service and I agree to the terms.
+        I read the Pricay Policy and I agree to the terms. */}
+
       </div>
     </Layout>
   );

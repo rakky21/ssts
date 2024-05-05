@@ -1,9 +1,15 @@
+
+
+OG CODE before switching it to try the new server
+
+
+server / package.json
 {
   "name": "server",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node src/index.ts\""
+    "start": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
@@ -12,15 +18,13 @@
     "@apollo/server": "^4.10.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "express": "^4.19.2",
+    "express": "^4.18.3",
     "graphql": "^16.8.1",
     "mongoose": "^8.1.3",
     "nodemon": "^3.0.3",
     "web-vitals": "^3.5.2"
   },
-  "description": "",
-  "devDependencies": {
-    "@types/mongoose": "^5.11.97",
-    "ts-node": "^10.9.2"
-  }
+  "description": ""
 }
+
+

@@ -5,7 +5,7 @@
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
-    "demon": "concurrently \"cd server && nodemon index.js\" \"cd client && vite\"",
+    "demon": "concurrently \"cd server && nodemon --watch\" \"cd client && vite\"",
     "install": "cd server && npm i && cd client && npm i",
     "build": "cd client && npm run build"
   },
@@ -15,9 +15,14 @@
   "dependencies": {
     "concurrently": "^8.2.2",
     "dotenv": "^16.4.5",
+    "nodemon": "^3.1.0",
     "react-icons": "^5.0.1",
     "react-router-dom": "^6.22.0",
     "vite": "^5.1.6",
     "web-vitals": "^3.5.2"
+  },
+  "devDependencies": {
+    "@types/mongoose": "^5.11.97",
+    "ts-node": "^10.9.2"
   }
 }

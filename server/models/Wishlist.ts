@@ -3,8 +3,7 @@ import mongoose, { mongo } from "mongoose";
 const Schema = mongoose.Schema;
 
 const WishlistSchema = new Schema({
-  creator: String,
-  description: String,
+  title: String,
 });
 
 const WishlistModel = mongoose.model("Wishlist", WishlistSchema);

@@ -7,28 +7,24 @@
   --transition3: all 2ms ease;
 
   .rainbow-text {
-    background-image: linear-gradient(
-      to left,
-      violet,
-      indigo,
-      blue,
-      green,
-      yellow,
-      orange,
-      red
-    );
+    background-image: linear-gradient(to left,
+        violet,
+        indigo,
+        blue,
+        green,
+        yellow,
+        orange,
+        red);
   }
 
   .background_main {
-    background-image: linear-gradient(
-      to right,
-      black,
-      indigo,
-      rgb(71, 71, 151),
-      rgb(159, 77, 175),
-      rgb(118, 63, 129),
-      rgb(89, 18, 104)
-    );
+    background-image: linear-gradient(to right,
+        black,
+        indigo,
+        rgb(71, 71, 151),
+        rgb(159, 77, 175),
+        rgb(118, 63, 129),
+        rgb(89, 18, 104));
   }
 
   --color-background-main: rgb(5, 71, 27);
@@ -92,6 +88,13 @@ section {
   padding: 3rem;
 }
 
+.cardsdisplay {
+  display: grid;
+  width: 600px;
+  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .little {
   font-size: smaller;
   color: var(--color-letter-third);
@@ -143,7 +146,7 @@ html {
   display: auto;
 }
 
-span > .HOME {
+span>.HOME {
   display: none;
 }
 
@@ -151,7 +154,7 @@ span > .HOME {
   text-align: center;
 }
 
-.nombre > a {
+.nombre>a {
   margin: 0;
   font-size: 4rem;
 }
@@ -183,6 +186,7 @@ textarea {
   padding: 5rem;
   margin: 10px;
 }
+
 .handshake {
   max-width: 45%;
 }

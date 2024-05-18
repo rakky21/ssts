@@ -16,21 +16,19 @@ app.use(
 );
 app.use(express.json());
 
-
 //Routes
-app.get("./wishlist", async (req: Request, res: Response) => {
-  //FET ALL DECKS AND SEND BACK
+app.get("/wishlist", async (req: Request, res: Response) => {
   const wishlist = await Wishlist.find();
   res.json(wishlist);
 });
 app.post("/wishlist", async (req: Request, res: Response) => {
   const newWishlist = new Wishlist({
     title: req.body.title,
+    description: req.body.description,
   });
   const createdWishlist = await newWishlist.save();
   res.json(createdWishlist);
 });
-
 
 mongoose.connect(process.env.MONGO_URL!).then(() => {
   app.listen(PORT);

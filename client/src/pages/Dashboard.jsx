@@ -6,7 +6,7 @@ const Dashboard = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
-  const [wishlist, setWishlist] = useState("");
+  const [wishlists, setWishlists] = useState([]);
 
   function handleCreateWish(e) {
     e.preventDefault();
@@ -28,19 +28,10 @@ const Dashboard = () => {
     async function fetchWishes() {
       const response = await fetch("http://localhost:4000/wishlist");
       const newWishlist = await response.json();
-      setWishlist(newWishlist);
+      setWishlists(newWishlist);
     }
     fetchWishes();
   }, []);
-
-  // useEffect(() => {
-  //   async function fetchWishes() {
-  //     const response = await fetch("http://localhost:4000/wishlist").then(
-  //       (response) => response.json()
-  //     );
-  //     fetchWishes();
-  //   }
-  // }, []);
 
   return (
     <Layout>
@@ -69,9 +60,16 @@ const Dashboard = () => {
       </form>
 
       <div className="cardsdisplay">
-        {/* {wishlist.map((wish) => (
-          <ul key={wishlist._id}> {wish.title} </ul>
-        ))} */}
+        {wishlists.map((wishlist) => (
+          <ul key={wishlist._id}>
+            <li>{wishlist.title}</li>
+            <li>{wishlist.description}</li>
+            <button className="btn" onClick={() => wishlist._id}>
+              {" "}
+              Delete
+            </button>
+          </ul>
+        ))}
       </div>
       <Outlet />
     </Layout>

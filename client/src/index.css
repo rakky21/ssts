@@ -60,6 +60,8 @@
   text-decoration: none;
   font-weight: 300;
   text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 /* FIX THE FONT SO IT'S ALL THE SAME WITHOUT MESSING WITH THE LAYOUT OF THE SIGNUP FORM */
@@ -81,29 +83,33 @@ span {
   color: var(--color-letter-secondary);
   transition: var(--transition);
 }
-
 section {
   max-width: 95%;
   margin: auto;
   padding: 3rem;
 }
-
 .cardsdisplay {
   display: grid;
   width: 600px;
   margin: 0 auto;
   grid-template-columns: repeat(3, 1fr);
 }
-
+.cardsdisplay ul {
+  display: block;
+  height: 25rem;
+  width: 18rem;
+  border: 1px solid white;
+  border-radius: 15px;
+  background-color: var(--color-background-second);
+  color: var(--color-letter-secondary);
+}
 .little {
   font-size: smaller;
   color: var(--color-letter-third);
 }
-
 .alert {
   color: var(--color-letter-alert);
 }
-
 img {
   display: block;
   max-width: 75%;
@@ -113,12 +119,10 @@ img {
   padding: 1rem;
   border-radius: 2rem;
 }
-
 a :hover {
   transition: var(--transition3);
   color: var(--color-letter-onHover);
 }
-
 /* BTN IS TO BE ADDED TO THE COMPONENTS */
 .btn {
   font-size: 2rem;
@@ -130,35 +134,28 @@ a :hover {
   margin: 1rem auto;
   color: var(--color-letter-secondary);
 }
-
 .btn:hover {
   transition: var(--transition);
   background-color: var(--color-letter-primary);
   color: var(--color-primary);
   box-shadow: none;
 }
-
 html {
   scroll-behavior: smooth;
 }
-
 ::-webkit-scrollbar {
   display: auto;
 }
-
 span>.HOME {
   display: none;
 }
-
 .layout {
   text-align: center;
 }
-
 .nombre>a {
   margin: 0;
   font-size: 4rem;
 }
-
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--color-bg3);
@@ -167,7 +164,6 @@ body {
   font-size: 2rem;
   background-color: var(--color-background-alt);
 }
-
 label,
 input,
 textarea {
@@ -177,20 +173,16 @@ textarea {
   text-align: left;
   resize: none;
 }
-
 .loginSection {
   display: flex;
 }
-
 .loginSignup {
   padding: 5rem;
   margin: 10px;
 }
-
 .handshake {
   max-width: 45%;
 }
-
 .loginStyle {
   border: 1px solid var(--color-border-primary);
   border-radius: 10px;
@@ -203,7 +195,6 @@ textarea {
   transition: var(--transition);
   background-color: var(--color-background-main);
 }
-
 .signupStyle {
   border: 1px solid var(--color-border-primary);
   border-radius: 10px;

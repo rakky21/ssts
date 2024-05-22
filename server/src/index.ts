@@ -28,7 +28,8 @@ app.delete("/wishlist/:wishlistId", async (req: Request, res: Response) => {
   const wishlistId = req.params.wishlistId;
   const wishlist = await Wishlist.findByIdAndDelete(wishlistId);
   res.json({
-    message: "Item Deleted",
+    wishlist,
+    message: "Wishlist deleted",
   });
 });
 mongoose.connect(process.env.MONGO_URL!).then(() => {

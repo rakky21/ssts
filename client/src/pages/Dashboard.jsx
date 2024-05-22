@@ -8,9 +8,9 @@ const Dashboard = () => {
 
   const [wishlists, setWishlists] = useState([]);
 
-  function handleCreateWish(e) {
+  async function handleCreateWish(e) {
     e.preventDefault();
-    fetch("http://localhost:4000/wishlist", {
+    const response = await fetch("http://localhost:4000/wishlist", {
       method: "POST",
       body: JSON.stringify({
         title,
@@ -20,8 +20,17 @@ const Dashboard = () => {
         "Content-Type": "application/json",
       },
     });
+    const wishlist = await response.json();
     setTitle("");
     setDescription("");
+    setWishlists([...wishlists, wishlist]);
+  }
+
+  async function handleDeleteWish(wishlistId) {
+    fetch(`http://localhost:4000/wishlist/${wishlistId}`, {
+      method: "DELETE",
+    });
+    setWishlists(wishlists.filter((wishlist) => wishlist._id !== wishlistId));
   }
 
   useEffect(() => {
@@ -64,7 +73,10 @@ const Dashboard = () => {
           <ul key={wishlist._id}>
             <li>{wishlist.title}</li>
             <li>{wishlist.description}</li>
-            <button className="btn" onClick={() => wishlist._id}>
+            <button
+              className="btn"
+              onClick={() => handleDeleteWish(wishlist._id)}
+            >
               {" "}
               Delete
             </button>

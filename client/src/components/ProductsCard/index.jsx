@@ -1,8 +1,8 @@
 import styles from "./card.module.css";
 
-export default function Card() {
+export default function ProductsCard() {
   return (
-    <section className={styles.card}>
+    <div className={styles.card}>
       <img
         className={styles.cardphoto}
         src="https://via.placeholder.com/150"
@@ -10,6 +10,6 @@ export default function Card() {
       />
       <h2 className={styles.cardTitle}> {}Title Name </h2>
       <p className={styles.p}> Description of what this is going to be about</p>
-    </section>
+    </div>
   );
 }

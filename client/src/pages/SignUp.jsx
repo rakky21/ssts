@@ -3,36 +3,27 @@ import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 
 const SignUp = () => {
-  const [data, setData] = useState({
+  const [user, setUser] = useState({
     username: "",
     email: "",
     password: "",
     agreement: "",
     subscription: "",
   });
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
 
-  const handleSubmit = async (e) => {
+  const handleCreateUser = async (e) => {
     e.preventDefault();
-    console.log(data);
-
-    const user = { data };
-
-    const response = await fetch("./api/users", {
+    const response = await fetch("http://localhost:4000/user", {
       method: "POST",
-      body: JSON.stringify(user),
-      headers: {
-        "Content-Type": "application/json",
-      },
+      body: JSON.stringify({ username, password, email }),
     });
-    const json = await response.json();
-
     if (!response.ok) {
       setError(json.error);
     }
 
     if (response.ok) {
-      setData("");
+      setUser("");
       setError(null);
       console.log("New user added");
     }
@@ -40,20 +31,20 @@ const SignUp = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setData({ ...data, [name]: value });
+    setUser({ ...user, [name]: value });
   };
 
   return (
     <Layout>
       <div className="signupStyle">
         <h2> Sign-Up </h2>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleCreateUser}>
           <input
             id="username"
             type="text"
             name="username"
             autoComplete="on"
-            value={data.username}
+            value={user.username}
             placeholder="Username"
             className="form-control rounded-0"
             onChange={handleChange}
@@ -64,7 +55,7 @@ const SignUp = () => {
             name="email"
             id="email"
             autoComplete="on"
-            value={data.email}
+            value={user.email}
             placeholder="Email Address"
             className="form-control rounded-0"
             onChange={handleChange}
@@ -74,7 +65,7 @@ const SignUp = () => {
             name="password"
             id="password"
             autoComplete="off"
-            value={data.password}
+            value={user.password}
             placeholder="Password"
             className="form-control rounded-0"
             onChange={handleChange}
@@ -92,7 +83,6 @@ const SignUp = () => {
 
         {/* <I read the NAME Terms of Service and I agree to the terms.
         I read the Pricay Policy and I agree to the terms. */}
-
       </div>
     </Layout>
   );

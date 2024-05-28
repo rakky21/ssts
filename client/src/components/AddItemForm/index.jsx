@@ -43,7 +43,6 @@ export default function AdditemForm() {
   return (
     <div className="AddItemform">
       <h2> Add an Item</h2>
-
       <form onSubmit={handleCreateWish} className="AddItemform">
         <label htmlFor="wishlist-title"> Wishlist Title: </label>
         <input

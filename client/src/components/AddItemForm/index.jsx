@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { deleteWishlist, getWishlist, createWishlist } from "../../api/wishlistAPI";
 
 export default function AdditemForm() {
   const [title, setTitle] = useState("");
@@ -8,33 +10,20 @@ export default function AdditemForm() {
 
   async function handleCreateWish(e) {
     e.preventDefault();
-    const response = await fetch("http://localhost:4000/wishlist", {
-      method: "POST",
-      body: JSON.stringify({
-        title,
-        description,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const wishlist = await response.json();
+    const wishlist = await createWishlist(title, description);
     setTitle("");
     setDescription("");
     setWishlists([...wishlists, wishlist]);
   }
 
   async function handleDeleteWish(wishlistId) {
-    fetch(`http://localhost:4000/wishlist/${wishlistId}`, {
-      method: "DELETE",
-    });
+    await deleteWishlist(wishlistId);
     setWishlists(wishlists.filter((wishlist) => wishlist._id !== wishlistId));
   }
 
   useEffect(() => {
     async function fetchWishes() {
-      const response = await fetch("http://localhost:4000/wishlist");
-      const newWishlist = await response.json();
+      const newWishlist = await getWishlist();
       setWishlists(newWishlist);
     }
     fetchWishes();
@@ -71,6 +60,10 @@ export default function AdditemForm() {
           <ul key={wishlist._id}>
             <li>{wishlist.title}</li>
             <li>{wishlist.description}</li>
+            <Link to={`/wishlist/${wishlist._id}`} className="btn">
+              {" "}
+              {wishlist.title}
+            </Link>
             <button
               className="btn"
               onClick={() => handleDeleteWish(wishlist._id)}

@@ -10,7 +10,7 @@ const SignUp = () => {
     agreement: "",
     subscription: "",
   });
-  // const [error, setError] = useState(null);
+  const [error, setError] = useState(null);
 
   const handleCreateUser = async (e) => {
     e.preventDefault();

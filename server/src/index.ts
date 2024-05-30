@@ -3,7 +3,17 @@ import cors from "cors";
 import mongoose from "mongoose";
 import { config } from "dotenv";
 config();
-import Wishlist from "../models/Wishlist";
+
+import {
+  createWishlistController,
+  deleteWishlistController,
+  getWishlistController,
+} from "../controllers/withlistControllers";
+import {
+  getWishlistCardController,
+  createWishlistCardController,
+  deleteWishlistCardController,
+} from "../controllers/wishlistCardController";
 
 const PORT = 4000;
 const app = express();
@@ -14,28 +24,12 @@ app.use(
 );
 app.use(express.json());
 
-// CREATE THE ROUTES AND UPDATE THE LAYOUT. ADD MERCHANDISE SAMPLE
-// // WISH
-app.get("/wishlist", async (req: Request, res: Response) => {
-  const wishlist = await Wishlist.find();
-  res.json(wishlist);
-});
-app.post("/wishlist", async (req: Request, res: Response) => {
-  const newWishlist = new Wishlist({
-    title: req.body.title,
-    description: req.body.description,
-  });
-  const createdWishlist = await newWishlist.save();
-  res.json(createdWishlist);
-});
-app.delete("/wishlist/:wishlistId", async (req: Request, res: Response) => {
-  const wishlistId = req.params.wishlistId;
-  const wishlist = await Wishlist.findByIdAndDelete(wishlistId);
-  res.json({
-    wishlist,
-    message: "Wishlist deleted",
-  });
-});
+app.get("/wishlist", getWishlistController);
+app.post("/wishlist", createWishlistController);
+app.delete("/wishlist/:wishlistId", deleteWishlistController);
+app.get("/wishlist/:wishlistId/card", getWishlistCardController);
+app.post("/wishlist/:wishlistId/card", createWishlistCardController);
+app.delete("/wishlist/:wishlistId/card", deleteWishlistCardController);
 
 mongoose.connect(process.env.MONGO_URL!).then(() => {
   app.listen(PORT);

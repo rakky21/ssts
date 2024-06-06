@@ -1,11 +1,6 @@
 import Wishlist from "../models/Wishlist";
 import { Request, Response } from "express";
 
-// // GET
-export async function getWishlistController(req: Request, res: Response) {
-  const wishlist = await Wishlist.find();
-  res.json(wishlist);
-}
 // // CREATE
 export async function createWishlistController(req: Request, res: Response) {
   const newWishlist = new Wishlist({
@@ -14,6 +9,11 @@ export async function createWishlistController(req: Request, res: Response) {
   });
   const createdWishlist = await newWishlist.save();
   res.json(createdWishlist);
+}
+// // GET
+export async function getWishlistController(req: Request, res: Response) {
+  const wishlist = await Wishlist.find();
+  res.json(wishlist);
 }
 // // DELETE
 export async function deleteWishlistController(req: Request, res: Response) {

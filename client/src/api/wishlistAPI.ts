@@ -1,16 +1,10 @@
-
 import { API_URL } from "./config";
 // // CREATE
 export async function createWishlist(title, description) {
   const response = await fetch(`${API_URL}/wishlist`, {
     method: "POST",
-    body: JSON.stringify({
-      title,
-      description,
-    }),
-    headers: {
-      "Content-Type": "application/json",
-    },
+    body: JSON.stringify({ title, description }),
+    headers: { "Content-Type": "application/json" },
   });
   return response.json();
 }

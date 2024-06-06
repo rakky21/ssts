@@ -17,16 +17,17 @@ import {
 
 const PORT = 4000;
 const app = express();
+// app.use(cors({ origin: ["http://locaholhost:4000", "http://localhost:5173"] }));
 app.use(cors({ origin: "*" }));
 app.use(express.json());
 // // WISH
-app.get("/wishlist", getWishlistController);
 app.post("/wishlist", createWishlistController);
+app.get("/wishlist", getWishlistController);
 app.delete("/wishlist/:wishlistId", deleteWishlistController);
 // // CARD
-app.get("/wishlist/:wishlistId/cards", getCardController);
 app.post("/wishlist/:wishlistId/cards", createCardController);
-app.delete("/wishlist/:wishlistId/cards", deleteCardController);
+app.get("/wishlist/:wishlistId", getCardController);
+app.delete("/wishlist/:wishlistId/cards/:index", deleteCardController);
 
 mongoose.connect(process.env.MONGO_URL!).then(() => {
   app.listen(PORT);

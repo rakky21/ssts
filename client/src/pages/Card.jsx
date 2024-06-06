@@ -1,44 +1,49 @@
 import { useState, useEffect } from "react";
 import { useParams, Outlet } from "react-router-dom";
-// import { createCard, deleteCard, getCard } from "../api/cardAPI";
 
 import Layout from "../components/Layout";
+import { createCard, getCard, deleteCard } from "../api/cardAPI";
 
-export default function AdditemForm() {
+export default function WishCard() {
+  const [wishlist, setWishlist] = useState();
   const [text, setText] = useState("");
   const { wishlistId } = useParams();
 
   const [cards, setCards] = useState([]);
+
   // // CREATE CARD
   async function handleCreateCard(e) {
     e.preventDefault();
-    const cards = await createCard(wishlistId, text);
-    setCards([...cards, cards]);
+    const { cards: serverCards } = await createCard(wishlistId, text);
+    setCards(serverCards);
     setText("");
   }
   // // DELETE CARD
   async function handleDeleteWishCard(wishlistId) {
-    await deleteCard(wishlistId);
-    setCards(cards.filter((card) => card._id !== wishlistId));
+    if (!wishlistId) return;
+    await deleteCard(wishlistId, index);
+    setCards([...cards].splice[(index, 1)]);
   }
   // // GET CARD
   useEffect(() => {
-    async function fetchSingleWishCard() {
-      const newSingleWishCard = await getCard();
-      setCards(newSingleWishCard);
+    async function fetchCard(wishlistId) {
+      if (!wishlistId) return;
+      const newWishlist = await getCard(wishlistId);
+      setWishlist(newWishlist);
+      setCards(newWishlist.cards);
     }
-    fetchSingleWishCard();
-  }, []);
+    fetchCard();
+  }, [wishlistId]);
 
   return (
     <Layout>
       <div className="AddItemform">
         <h2> Add an Item</h2>
         <form onSubmit={handleCreateCard} className="AddItemform">
-          <label htmlFor="wishlist-text"> Item Name: </label>
+          <label htmlFor="card-text"> Item Name: </label>
           <input
             required
-            id="wishlist-text"
+            id="card-text"
             value={text}
             onChange={(e) => setText(e.target.value)}
             type="text"
@@ -48,12 +53,12 @@ export default function AdditemForm() {
           <button className="btn"> Submit </button>
         </form>
         <div className="cardsdisplay">
-          {cards.map((cards) => (
-            <ul key={cards}>
-              <li>{cards}</li>
+          {cards.map((card, index) => (
+            <ul key={index}>
+              <li>{card}</li>
               <button
                 className="btn"
-                onClick={() => handleDeleteWishCard(wishlist._id)}
+                onClick={() => handleDeleteWishCard(index)}
               >
                 {" "}
                 Delete

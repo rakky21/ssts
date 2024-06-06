@@ -13,12 +13,16 @@ export async function createCard(wishlistId, text) {
   });
   return response.json();
 }
+
+// // THIS IS THE BITCHASS THAT'S BREAKING
 // // GET ONE
 export async function getCard(wishlistId) {
-  const response = await fetch(`${API_URL}/wishlist/${wishlistId}/cards`);
+  const response = await fetch(`${API_URL}/wishlist/${wishlistId}`);
   return response.json();
 }
 // // DELETE
-export async function deleteCard(wishlistId) {
-  fetch(`${API_URL}/wishlist/${wishlistId}/cards`);
+export async function deleteCard(wishlistId, index) {
+  await fetch(`${API_URL}/wishlist/${wishlistId}/cards/${index}`, {
+    method: "DELETE",
+  });
 }

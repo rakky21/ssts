@@ -7,7 +7,7 @@ import About from "./pages/About.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
-import Wishlist from "./pages/Wishlist.jsx";
+import Card from "./pages/Card.jsx";
 
 import {
   createBrowserRouter as Router,
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/wishlist/:wishlistId",
-    element: <Wishlist />,
+    element: <Card />,
   },
   {
     path: "/login",

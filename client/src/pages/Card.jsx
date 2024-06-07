@@ -19,10 +19,10 @@ export default function WishCard() {
     setText("");
   }
   // // DELETE CARD
-  async function handleDeleteWishCard(wishlistId) {
+  async function handleDeleteWishCard(index) {
     if (!wishlistId) return;
-    await deleteCard(wishlistId, index);
-    setCards([...cards].splice[(index, 1)]);
+    const newWishlist = await deleteCard(wishlistId, index);
+    setCards(newWishlist.cards);
   }
   // // GET CARD
   useEffect(() => {

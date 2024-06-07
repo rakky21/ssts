@@ -22,7 +22,11 @@ export async function getCard(wishlistId) {
 }
 // // DELETE
 export async function deleteCard(wishlistId, index) {
-  await fetch(`${API_URL}/wishlist/${wishlistId}/cards/${index}`, {
-    method: "DELETE",
-  });
+  const response = await fetch(
+    `${API_URL}/wishlist/${wishlistId}/cards/${index}`,
+    {
+      method: "DELETE",
+    }
+  );
+  return response.json();
 }

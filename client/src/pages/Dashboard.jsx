@@ -12,7 +12,7 @@ const Dashboard = () => {
   const [description, setDescription] = useState("");
 
   const [wishlists, setWishlists] = useState([]);
-// // CREATE WISH
+  // // CREATE WISH
   async function handleCreateWish(e) {
     e.preventDefault();
     const wishlist = await createWishlist(title, description);
@@ -20,12 +20,12 @@ const Dashboard = () => {
     setDescription("");
     setWishlists([...wishlists, wishlist]);
   }
-// // DELETE WISH
+  // // DELETE WISH
   async function handleDeleteWish(wishlistId) {
     await deleteWishlist(wishlistId);
     setWishlists(wishlists.filter((wishlist) => wishlist._id !== wishlistId));
   }
-// //  GET WISH
+  // //  GET WISH
   useEffect(() => {
     async function fetchWishes() {
       const newWishlist = await getWishlist();
@@ -63,16 +63,17 @@ const Dashboard = () => {
         <div className="cardsdisplay">
           {wishlists.map((wishlist) => (
             <ul key={wishlist._id}>
+  
               <li>{wishlist.title}</li>
               <li>{wishlist.description}</li>
               <Link to={`/wishlist/${wishlist._id}`} className="btn">
                 {" "}
-                {wishlist.title}
+                Open
               </Link>
               <button
                 className="btn"
                 onClick={() => handleDeleteWish(wishlist._id)}
-              >
+               >
                 {" "}
                 Delete
               </button>

@@ -14,6 +14,11 @@ import {
   createCardController,
   deleteCardController,
 } from "../controllers/cardControllers";
+import {
+  createProductController,
+  getProductController,
+  deleteProductController,
+} from "../controllers/productControllers";
 
 const PORT = 4000;
 const app = express();
@@ -28,6 +33,14 @@ app.delete("/wishlist/:wishlistId", deleteWishlistController);
 app.post("/wishlist/:wishlistId/cards", createCardController);
 app.get("/wishlist/:wishlistId", getCardController);
 app.delete("/wishlist/:wishlistId/cards/:index", deleteCardController);
+// // PRODUCT
+app.post("/products", createCardController);
+app.get("/products", getCardController);
+app.delete("products/:productId", deleteCardController);
+// // PRODUCT
+app.post("/product", createProductController);
+app.get("/product", getProductController);
+app.delete("/product/:productId", deleteProductController);
 
 mongoose.connect(process.env.MONGO_URL!).then(() => {
   app.listen(PORT);

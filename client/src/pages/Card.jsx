@@ -26,7 +26,7 @@ export default function WishCard() {
   }
   // // GET CARD
   useEffect(() => {
-    async function fetchCard(wishlistId) {
+    async function fetchCard() {
       if (!wishlistId) return;
       const newWishlist = await getCard(wishlistId);
       setWishlist(newWishlist);

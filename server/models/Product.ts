@@ -1,14 +1,14 @@
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 
 const ProductSchema = new Schema({
-  itemName: String,
-  itemImage: String,
-  itemDescription: String,
-  itemPrice: Number,
-  itemQuantity: Number,
-  itemCategory: String,
+  itemname: String,
+  itemimage: String,
+  itemdescription: String,
+  itemprice: Number,
+  itemquantity: Number,
+  itemcategory: String,
 });
 
 const ProductModel = mongoose.model("Product", ProductSchema);

@@ -61,44 +61,10 @@ export default function Merchandise() {
     },
   ];
 
-  const merchandiseData = [
-    {
-      id: 9,
-      title: "Zyraphine2",
-      src: "image",
-      textBox: "sculture",
-      stars: 5,
-    },
-    {
-      id: 10,
-      title: "Apple2",
-      src: "image",
-      textBox: "fruit",
-      stars: 5,
-    },
-    {
-      id: 11,
-      title: "Belt2",
-      src: "image",
-      textBox: "Small belt",
-      stars: 3,
-    },
-    {
-      id: 12,
-      title: "Book case 2",
-      src: "image",
-      textBox: "Cover",
-      stars: 5,
-    },
-  ];
-
   return (
     <>
       {displayedData.length > 0 && (
         <List items={displayedData} category="Display" />
-      )}
-      {merchandiseData.length > 0 && (
-        <List items={merchandiseData} category="Merchandise" />
       )}
     </>
   );

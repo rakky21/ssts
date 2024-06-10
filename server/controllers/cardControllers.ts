@@ -1,4 +1,3 @@
-// import { createWishlistCard } from "../../client/src/api/wishlistCard";
 import Wishlist from "../models/Wishlist";
 import { Request, Response } from "express";
 
@@ -6,7 +5,7 @@ import { Request, Response } from "express";
 export async function createCardController(req: Request, res: Response) {
   const wishlistId = req.params.wishlistId;
   const wishlist = await Wishlist.findById(wishlistId);
-  if (!wishlist) return res.status(400).send("No wishlist found with this ID");
+  if (!wishlist) return res.status(400).send("No card was found with this ID");
   const { text } = req.body;
   wishlist.cards.push(text);
   await wishlist.save();
@@ -24,7 +23,7 @@ export async function deleteCardController(req: Request, res: Response) {
   const wishlistId = req.params.wishlistId;
   const index = req.params.index;
   const wishlist = await Wishlist.findById(wishlistId);
-  if (!wishlist) return res.status(400).send("No wishlist of this ID exists");
+  if (!wishlist) return res.status(400).send("No card exists with this ID");
   wishlist.cards.splice(parseInt(index), 1);
   await wishlist.save();
   res.json(wishlist);

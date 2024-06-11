@@ -48,8 +48,6 @@ app.delete("/wishlist/:wishlistId", deleteWishlistController);
 app.post("/wishlist/:wishlistId/cards", createCardController);
 app.get("/wishlist/:wishlistId", getCardController);
 app.delete("/wishlist/:wishlistId/cards/:index", deleteCardController);
-<<<<<<< HEAD
-=======
 // // PRODUCT
 app.post("/products", createCardController);
 app.get("/products", getCardController);
@@ -58,9 +56,3 @@ app.delete("products/:productId", deleteCardController);
 app.post("/product", createProductController);
 app.get("/product", getProductController);
 app.delete("/product/:productId", deleteProductController);
-
-mongoose.connect(process.env.MONGO_URL!).then(() => {
-  app.listen(PORT);
-  console.log(`🌍 listening on port: ${PORT} & connected to db`);
-});
->>>>>>> faf4ca083774ffa7125cc70d1a2dbee8f21fff0f

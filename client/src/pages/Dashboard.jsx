@@ -63,7 +63,6 @@ const Dashboard = () => {
         <div className="cardsdisplay">
           {wishlists.map((wishlist) => (
             <ul key={wishlist._id}>
-  
               <li>{wishlist.title}</li>
               <li>{wishlist.description}</li>
               <Link to={`/wishlist/${wishlist._id}`} className="btn">
@@ -73,7 +72,7 @@ const Dashboard = () => {
               <button
                 className="btn"
                 onClick={() => handleDeleteWish(wishlist._id)}
-               >
+              >
                 {" "}
                 Delete
               </button>

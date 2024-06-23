@@ -7,24 +7,28 @@
   --transition3: all 2ms ease;
 
   .rainbow-text {
-    background-image: linear-gradient(to left,
-        violet,
-        indigo,
-        blue,
-        green,
-        yellow,
-        orange,
-        red);
+    background-image: linear-gradient(
+      to left,
+      violet,
+      indigo,
+      blue,
+      green,
+      yellow,
+      orange,
+      red
+    );
   }
 
   .background_main {
-    background-image: linear-gradient(to right,
-        black,
-        indigo,
-        rgb(71, 71, 151),
-        rgb(159, 77, 175),
-        rgb(118, 63, 129),
-        rgb(89, 18, 104));
+    background-image: linear-gradient(
+      to right,
+      black,
+      indigo,
+      rgb(71, 71, 151),
+      rgb(159, 77, 175),
+      rgb(118, 63, 129),
+      rgb(89, 18, 104)
+    );
   }
 
   --color-background-main: rgb(5, 71, 27);
@@ -92,10 +96,22 @@ section {
 }
 
 .cardsdisplay {
-  display: grid;
-  width: 600px;
+  border: 1px solid var(--color-border-cyan);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgb(0, 0, 0);
+  padding: 1rem;
   margin: 0 auto;
+  text-align: center;
+  max-width: 350px;
+  display: inline-flexbox;
+  transition: var(--transition);
+  background-color: var(--color-background-main);
   grid-template-columns: repeat(3, 1fr);
+}
+.cardsimage {
+  height: 150px;
+  object-fit: cover;
+  margin: auto;
 }
 
 .cardsdisplay ul {
@@ -159,7 +175,7 @@ html {
   display: auto;
 }
 
-span>.HOME {
+span > .HOME {
   display: none;
 }
 
@@ -167,7 +183,7 @@ span>.HOME {
   text-align: center;
 }
 
-.nombre>a {
+.nombre > a {
   margin: 0;
   font-size: 4rem;
 }

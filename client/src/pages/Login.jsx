@@ -42,7 +42,6 @@ const Login = () => {
           </Link>
           <img src={photographia} className="handshake" />
         </div>
-
         <div className="loginStyle">
           <h2> Login </h2>
           <form onSubmit={handleFormSubmit}>
@@ -81,5 +80,4 @@ const Login = () => {
     </Layout>
   );
 };
-
 export default Login;

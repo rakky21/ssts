@@ -12,7 +12,8 @@ const userSchema = new Schema({
     type: String,
     required: true,
     unique: true,
-    match: [/.+@.+\..+/, "Must match an email address!"],
+    // // THIS BREAKS MY CODE ON UI BUT NOT THROUGH THUNDER APP
+    // match: [/.+@.+\..+/, "Must match an email address!"],
   },
   password: {
     type: String,

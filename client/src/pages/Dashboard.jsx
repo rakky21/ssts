@@ -33,7 +33,7 @@ const Dashboard = () => {
     }
     fetchWishes();
   }, []);
-  return (
+  return ( 
     <Layout>
       <div className="AddItemform">
         <h2> Add an Item</h2>
@@ -60,9 +60,15 @@ const Dashboard = () => {
           <br />
           <button className="btn"> Add Wish</button>
         </form>
-        <div className="cardsdisplay">
+        <div>
           {wishlists.map((wishlist) => (
-            <ul key={wishlist._id}>
+            <ul key={wishlist._id} className
+            ="cardsdisplay">
+              <img
+                src="https://via.placeholder.com/"
+                alt="Image display"
+                className="cardsimage"
+              />
               <li>{wishlist.title}</li>
               <li>{wishlist.description}</li>
               <Link to={`/wishlist/${wishlist._id}`} className="btn">

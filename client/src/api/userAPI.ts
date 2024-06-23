@@ -1,9 +1,9 @@
 import { API_URL } from "./config";
 // // CREATE
-export async function createUser(title, description) {
+export async function createUser(username, password, email) {
   const response = await fetch(`${API_URL}/user`, {
     method: "POST",
-    body: JSON.stringify({ title, description }),
+    body: JSON.stringify({ username, password, email }),
     headers: { "Content-Type": "application/json" },
   });
   return response.json();

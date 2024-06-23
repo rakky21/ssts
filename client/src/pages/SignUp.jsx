@@ -152,6 +152,11 @@ const SignUp = () => {
           {/* TOGGLED TO RECEIVE NEWS OR NOT */}
 
           <button className="btn">Register</button>
+          <p>
+            {" "}
+            Signing up signifies you have read and agree to the Terms of Service
+            and our Privacy Policy.
+          </p>
         </form>
         <p> Already Have an Account? </p>
         <Link to="/login" className="btn">

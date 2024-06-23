@@ -24,7 +24,7 @@
     color: var(--color-)
   }
   .nav_right_display {
-    display: flex;
+    /* display: flex; */
     position: absolute;
     right: 10px;
   }

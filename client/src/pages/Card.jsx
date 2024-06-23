@@ -37,7 +37,7 @@ export default function WishCard() {
 
   return (
     <Layout>
-      <div className="AddItemform">
+      <div className="cardForm">
         <h2> Add an Item</h2>
         <form onSubmit={handleCreateCard} className="AddItemform">
           <label htmlFor="card-text"> Item Name: </label>

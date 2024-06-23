@@ -1,6 +1,5 @@
 import List from "../List";
 
-// APP
 export default function Merchandise() {
   const displayedData = [
     {
@@ -20,7 +19,7 @@ export default function Merchandise() {
     {
       id: 6,
       title: "Belt",
-      src: 'Belt',
+      src: "Belt",
       textBox: "Small belt",
       stars: 3,
     },
@@ -60,7 +59,6 @@ export default function Merchandise() {
       stars: 4,
     },
   ];
-
   return (
     <>
       {displayedData.length > 0 && (

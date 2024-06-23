@@ -3,7 +3,7 @@ footer {
   width: 100%;
   height: auto;
   min-height: 35vh;
-  display: grid;
+  /* display: grid; */
   color: var(--color-background-main);
 }
 .middleSection {

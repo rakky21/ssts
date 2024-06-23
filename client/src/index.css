@@ -7,28 +7,24 @@
   --transition3: all 2ms ease;
 
   .rainbow-text {
-    background-image: linear-gradient(
-      to left,
-      violet,
-      indigo,
-      blue,
-      green,
-      yellow,
-      orange,
-      red
-    );
+    background-image: linear-gradient(to left,
+        violet,
+        indigo,
+        blue,
+        green,
+        yellow,
+        orange,
+        red);
   }
 
   .background_main {
-    background-image: linear-gradient(
-      to right,
-      black,
-      indigo,
-      rgb(71, 71, 151),
-      rgb(159, 77, 175),
-      rgb(118, 63, 129),
-      rgb(89, 18, 104)
-    );
+    background-image: linear-gradient(to right,
+        black,
+        indigo,
+        rgb(71, 71, 151),
+        rgb(159, 77, 175),
+        rgb(118, 63, 129),
+        rgb(89, 18, 104));
   }
 
   --color-background-main: rgb(5, 71, 27);
@@ -90,9 +86,10 @@ span {
 }
 
 section {
-  max-width: 95%;
+  max-width: 90%;
   margin: auto;
   padding: 3rem;
+  gap: 20rem;
 }
 
 .cardsdisplay {
@@ -103,11 +100,12 @@ section {
   margin: 0 auto;
   text-align: center;
   max-width: 350px;
-  display: inline-flexbox;
+  /* display: inline-flexbox; */
   transition: var(--transition);
   background-color: var(--color-background-main);
   grid-template-columns: repeat(3, 1fr);
 }
+
 .cardsimage {
   height: 150px;
   object-fit: cover;
@@ -115,7 +113,7 @@ section {
 }
 
 .cardsdisplay ul {
-  display: block;
+  /* display: block; */
   height: 25rem;
   width: 18rem;
   border: 1px solid white;
@@ -134,7 +132,7 @@ section {
 }
 
 img {
-  display: block;
+  /* display: block; */
   max-width: 75%;
   height: auto;
   object-fit: contain;
@@ -175,7 +173,7 @@ html {
   display: auto;
 }
 
-span > .HOME {
+span>.HOME {
   display: none;
 }
 
@@ -183,7 +181,7 @@ span > .HOME {
   text-align: center;
 }
 
-.nombre > a {
+.nombre>a {
   margin: 0;
   font-size: 4rem;
 }
@@ -207,8 +205,14 @@ textarea {
   resize: none;
 }
 
+.aboutUs {
+  display: block;
+}
+.aboutUsDetail {
+  display: ;
+}
 .loginSection {
-  display: flex;
+  /* display: flex; */
 }
 
 .loginSignup {
@@ -241,7 +245,7 @@ textarea {
   margin: 10px;
   text-align: center;
   max-width: 35rem;
-  display: inline-block;
+  /* display: inline-block; */
   transition: var(--transition);
   background-color: var(--color-background-main);
   color: var(--color-letter-secondary);

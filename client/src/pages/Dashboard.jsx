@@ -1,5 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import Scheduler from "../components/Scheduler";
 import {
   deleteWishlist,
   getWishlist,
@@ -33,9 +34,10 @@ const Dashboard = () => {
     }
     fetchWishes();
   }, []);
-  return ( 
+  return (
     <Layout>
-      <div className="AddItemform">
+      <div className="dashboardForm">
+      <Scheduler />
         <h2> Add an Item</h2>
         <form onSubmit={handleCreateWish} className="AddItemform">
           <label htmlFor="wishlist-title"> Wishlist Title: </label>
@@ -60,10 +62,9 @@ const Dashboard = () => {
           <br />
           <button className="btn"> Add Wish</button>
         </form>
-        <div>
+      
           {wishlists.map((wishlist) => (
-            <ul key={wishlist._id} className
-            ="cardsdisplay">
+            <ul key={wishlist._id} className="cardsdisplay">
               <img
                 src="https://via.placeholder.com/"
                 alt="Image display"
@@ -84,7 +85,6 @@ const Dashboard = () => {
               </button>
             </ul>
           ))}
-        </div>
       </div>
       <Outlet />
     </Layout>
